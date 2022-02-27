@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./js/babylon.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/obstacle.js"></script>
+    <title>Juego Alvaro</title>
+</head>
+
+<body>
+    <section id="menu">
+        <section id="message"></section>
+        <h1>Menu</h1>
+        <div>
+            <label for="difficulty">Velocidad</label>
+            <input type="range" name="difficulty" min="1" max="3" value="1" onchange="dragInput(this)">
+            <label for="difficulty" id="l_dif">1</label>
+        </div>
+        <div>
+            <label for="long">Longitud</label>
+            <input type="range" name="long" min="300" max="3000" value="1200" onchange="dragInput(this)">
+            <label for="long" id="l_lon">1200</label>
+        </div>
+        <div>
+            <label for="obstacles">Obstaculos</label>
+            <input type="range" name="obstacles" min="10" max="200" value="80" onchange="dragInput(this)">
+            <label for="obstacles" id="l_obs">80</label>
+        </div>
+        <button onclick="startGame()">Empezar juego</button>
+        <h2>Instrucciones</h2>
+        <p>
+            El juego consiste en una bola que se mueve por la carretera. Manten el click sobre la bola "<b>drag</b>" para
+            moverla de izqda. a dcha.
+        </p>
+        <p>
+            Los obstáculos <b style="color: green">verdes</b> tambien pueden ser movidos para ayudar a crearle un hueco a la bola.
+        </p>
+        <p>
+            Para <b>ganar</b> debes esquivar los obstaculos que se generan de forma aleatoria.
+            El juego termina si colisionas con un objeto o consigues llegar al final.
+        </p>
+        <p>
+            Puedes cambiar varias <b>opciones</b> en el menú de arriba.
+        </p>
+        <p>
+            Para jugar haga click en empezar y nuevamente haga click en la pantalla.
+        </p>
+        <h4 id="firma"><i>Hecho por <b>Álvaro Carbajo</b>.</i></h4>
+    </section>
+    <section id="info" class="hidden">
+        <h3> - INFO - </h3>
+        <p id="metros"></p>
+        <p id="obstaculos"></p>
+    </section>
+    <section id="game" class="hidden">
+
+    </section>
+</body>
+
+</html>
